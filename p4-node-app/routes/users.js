@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 //Model
-const User = require("../models/Users");
+const User = require("../models/User");
 
 //Get user
 router.get("/:id", (request, response) => {
@@ -11,6 +11,17 @@ router.get("/:id", (request, response) => {
       response.send(result);
     }
   });
+});
+
+//Get all crops of specific user
+router.get("/:id/crops", (request, response) => {
+  User.find({ _id: request.params.id }, { crops: 1 })
+    .populate("crops")
+    .exec((error, result) => {
+      if (typeof result === "object") {
+        response.send(result);
+      }
+    });
 });
 
 //Update a user
