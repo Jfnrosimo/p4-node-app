@@ -4,7 +4,6 @@ const router = express.Router();
 //Model
 const Crop = require("../models/Crops");
 
-//Get method
-router.get("/", (request, response) => {});
+//Return all
 
 module.exports = router;
