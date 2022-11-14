@@ -37,7 +37,7 @@ router.get("/:id/crops", (request, response) => {
 // });
 
 //Add a crop to a user's crops
-router.put("./userId/crops/:cropId", (request, response) => {
+router.put("/:userId/crops/:cropId", (request, response) => {
   User.updateOne(
     { _id: request.params.userId },
     {
