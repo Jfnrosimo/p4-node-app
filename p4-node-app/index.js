@@ -16,7 +16,7 @@ const UserRouter = require("./routes/users");
 const CropRouter = require("./routes/crops");
 
 //Database connection
-mongoose.connect("mongodb://localhost:27017/vepplydb");
+mongoose.connect("mongodb://127.0.0.1:27017/vepplydb");
 
 server.get("/", (request, response) => {
   response.send("Welcome to vepply server");
