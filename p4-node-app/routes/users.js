@@ -16,7 +16,7 @@ router.get("/:id", (request, response) => {
 //Get all crops of specific user
 router.get("/:id/crops", (request, response) => {
   User.find({ _id: request.params.id }, { crops: 1 })
-    .populate("crops")
+    .populate("crops", "-creator")
     .exec((error, result) => {
       if (typeof result === "object") {
         response.send(result);

@@ -13,6 +13,7 @@ server.use(bodyParser.json());
 
 //Routes
 const UserRouter = require("./routes/users");
+const CropRouter = require("./routes/crops");
 
 //Database connection
 mongoose.connect("mongodb://localhost:27017/vepplydb");
@@ -23,6 +24,7 @@ server.get("/", (request, response) => {
 
 //Let server use routes
 server.use("/api/v1/users", UserRouter);
+server.use("/api/v1/crops", CropRouter);
 
 server.listen(port, () => {
   console.log(`This server is running at port ${port}`);

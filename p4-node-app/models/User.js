@@ -10,6 +10,7 @@ const UserSchema = new mongoose.Schema({
   producerName: String,
   address: String,
   isAdmin: Boolean,
+  crops: [{ type: mongoose.Schema.Types.ObjectId, ref: "Crop" }],
 });
 
 module.exports = mongoose.model("User", UserSchema);

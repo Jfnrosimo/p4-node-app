@@ -2,8 +2,26 @@ const express = require("express");
 const router = express.Router();
 
 //Model
-const Crop = require("../models/Crops");
+const Crop = require("../models/Crop");
 
-//Return all
+//Create new crop
+router.post("/:id", (request, response) => {
+  let newCrop = new Crop({
+    ...request.body,
+    creator: request.params.id,
+  });
+  newCrop.save().then((result) => {
+    response.send({ status: "New crop created" });
+  });
+});
+
+//Delete a crop
+router.delete("/:id", (request, response) => {
+  Crop.deleteOne({ _id: request.params.id }).then((result) => {
+    if (result.deletedCount === 1) {
+      response.send({ status: "Crop has been removed" });
+    }
+  });
+});
 
 module.exports = router;
