@@ -8,7 +8,7 @@ const UserSchema = new mongoose.Schema({
   birthDate: Date,
   contactNumber: String,
   producerName: String,
-  address: String,
+  location: String,
   isAdmin: Boolean,
   crops: [{ type: mongoose.Schema.Types.ObjectId, ref: "Crop" }],
 });
