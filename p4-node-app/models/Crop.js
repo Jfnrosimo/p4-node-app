@@ -6,6 +6,7 @@ const CropSchema = new mongoose.Schema({
   harvestWeight: Number,
   datePlanted: Date,
   dateOfHarvest: Date,
+  creator: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   status: String,
 });
 
