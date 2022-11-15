@@ -4,7 +4,7 @@ const router = express.Router();
 //Model
 const User = require("../models/User");
 
-//Get user -------(TEST OK)-------
+//Get user
 router.get("/:id", (request, response) => {
   User.findOne({ _id: request.params.id }, { password: 0 }).then((result) => {
     if (typeof result === "object") {
@@ -13,7 +13,7 @@ router.get("/:id", (request, response) => {
   });
 });
 
-//Get all crops of specific user -----(TEST OK)------
+//Get all crops of specific user
 router.get("/:id/crops", (request, response) => {
   User.find({ _id: request.params.id }, { crops: 1 })
     .populate("crops", "-creator -__v")
@@ -24,7 +24,7 @@ router.get("/:id/crops", (request, response) => {
     });
 });
 
-//Update a user ------(TEST OK)--------
+//Update a user
 router.put("/:id", (request, response) => {
   const userId = request.params.id;
   User.updateOne({ _id: userId }, { $set: { ...request.body } }).then(
@@ -36,7 +36,7 @@ router.put("/:id", (request, response) => {
   );
 });
 
-//Add a crop to a user's crops -----------------(TEST NOT OK)-------------------------
+//Add a crop to a user's crops
 router.put("/:userId/crops/:cropId", (request, response) => {
   User.updateOne(
     { _id: request.params.userId },
