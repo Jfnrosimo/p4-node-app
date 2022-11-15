@@ -16,7 +16,7 @@ router.post("/register", (request, response) => {
   });
 
   newUser.save().then((result) => {
-    response.send({});
+    response.send({ status: "User has been registered" });
   });
 });
 
