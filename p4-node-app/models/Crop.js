@@ -8,6 +8,7 @@ const CropSchema = new mongoose.Schema({
   dateOfHarvest: Date,
   creator: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   status: String,
+  isHarvested: Boolean,
 });
 
 module.exports = mongoose.model("Crop", CropSchema);
