@@ -14,6 +14,10 @@ router.post("/register", (request, response) => {
     ...request.body,
     password: hashedPassword,
   });
+
+  newUser.save().then((result) => {
+    response.send({});
+  });
 });
 
 module.exports = router;
