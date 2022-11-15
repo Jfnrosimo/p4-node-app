@@ -5,6 +5,7 @@ const router = express.Router();
 const Crop = require("../models/Crop");
 
 //Create new crop from a user ------(TEST OK)--------
+//Router parameter id is the Creator of the crop
 router.post("/:id", (request, response) => {
   let newCrop = new Crop({
     ...request.body,
@@ -13,6 +14,18 @@ router.post("/:id", (request, response) => {
   newCrop.save().then((result) => {
     response.send({ status: "New crop created" });
   });
+});
+
+//Update a crop
+router.put("/:id", (request, response) => {
+  const cropId = request.params.id;
+  Crop.updateOne({ _id: cropId }, { $set: { ...request.body } }).then(
+    (result) => {
+      if (result.modiedCount === 1) {
+        response.send({ status: "Crop has been updated" });
+      }
+    }
+  );
 });
 
 //Delete a crop ------(TEST OK)-------
