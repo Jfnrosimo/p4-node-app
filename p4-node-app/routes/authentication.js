@@ -8,8 +8,8 @@ const User = require("../models/User");
 const bcrypt = require("bcrypt");
 
 //Create user registration
-router.post("/register", (request, response) => {
-  const hashedPassword = bcrypt.hash(request.body.password, 10);
+router.post("/register", async (request, response) => {
+  const hashedPassword = await bcrypt.hash(request.body.password, 10);
   const newUser = new User({
     ...request.body,
     password: hashedPassword,
