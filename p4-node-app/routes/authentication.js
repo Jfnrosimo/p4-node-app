@@ -20,4 +20,18 @@ router.post("/register", async (request, response) => {
   });
 });
 
+//Login authentication
+router.post("/login", (request, response) => {
+  User.findOne({ email: request.body.email }).then((result) => {
+    bcrypt.compare(request.body.password, result.password, (error, match) => {
+      //Authenticate user login
+      if (match) {
+        response.send({ status: "User sucessfully logged in" });
+      } else {
+        response.send({ status: "Credentials not valid" });
+      }
+    });
+  });
+});
+
 module.exports = router;
