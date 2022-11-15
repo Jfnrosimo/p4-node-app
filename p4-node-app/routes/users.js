@@ -4,7 +4,7 @@ const router = express.Router();
 //Model
 const User = require("../models/User");
 
-//Get user
+//Get user -------(TEST OK)-------
 router.get("/:id", (request, response) => {
   User.findOne({ _id: request.params.id }, { password: 0 }).then((result) => {
     if (typeof result === "object") {
@@ -13,7 +13,7 @@ router.get("/:id", (request, response) => {
   });
 });
 
-//Get all crops of specific user
+//Get all crops of specific user -----(TEST OK)------
 router.get("/:id/crops", (request, response) => {
   User.find({ _id: request.params.id }, { crops: 1 })
     .populate("crops", "-creator -__v")
@@ -24,19 +24,19 @@ router.get("/:id/crops", (request, response) => {
     });
 });
 
-//Update a user
-// router.put("/:id", (request, response) => {
-//   const userId = request.params.id;
-//   User.updateOne({ _id: userId }, { $set: { ...request.body } }).then(
-//     (result) => {
-//       if (result.modifiedCount === 1) {
-//         response.send({ status: "User has been updated" });
-//       }
-//     }
-//   );
-// });
+//Update a user ------(TEST OK)--------
+router.put("/:id", (request, response) => {
+  const userId = request.params.id;
+  User.updateOne({ _id: userId }, { $set: { ...request.body } }).then(
+    (result) => {
+      if (result.modifiedCount === 1) {
+        response.send({ status: "User has been updated" });
+      }
+    }
+  );
+});
 
-//Add a crop to a user's crops
+//Add a crop to a user's crops -----------------(TEST NOT OK)-------------------------
 router.put("/:userId/crops/:cropId", (request, response) => {
   User.updateOne(
     { _id: request.params.userId },
