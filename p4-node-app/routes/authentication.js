@@ -26,7 +26,7 @@ router.post("/login", (request, response) => {
     bcrypt.compare(request.body.password, result.password, (error, match) => {
       //Authenticate user login
       if (match) {
-        response.send({ status: "User sucessfully logged in" });
+        response.send({ status: "User input is valid" });
       } else {
         response.send({ status: "Credentials not valid" });
       }
