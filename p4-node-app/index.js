@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
+const cors = require("cors");
+const helmet = require("helmet");
 
 //Server setup
 const server = express();
@@ -10,6 +12,8 @@ const port = 8000;
 //Middlewares
 server.use(morgan("dev"));
 server.use(bodyParser.json());
+server.use(helmet());
+server.use(cors());
 
 //Routes
 const UserRouter = require("./routes/users");
