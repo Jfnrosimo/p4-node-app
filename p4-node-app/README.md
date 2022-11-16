@@ -25,4 +25,22 @@ This is a backend for vepply, a vegetable production monitoring app. Users can m
 - morgan
 - body-parser
 - bcrypt
+- cors (cross-origin resource sharing)
 - helmet
+
+### Entity Relationship Diagram (ERD)
+
+![](./assets/images/vepply-ERD.PNG)
+
+### Database and API design
+
+| Action | Route                         |     |
+| ------ | ----------------------------- | --- |
+| Create | /login                        |     |
+| POST   | /register                     |     |
+| POST   | /me/from/token                |     |
+| GET    | /cloudinary-data/:pid         |     |
+| GET    | /profile/:userId/uploads      |     |
+| GET    | /profile/:userId/uploads/:uid |     |
+| POST   | /profile/:userId/uploads      |     |
+| DELETE | /profile/upload/delete        |     |

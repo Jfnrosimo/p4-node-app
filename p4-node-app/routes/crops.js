@@ -21,7 +21,7 @@ router.put("/:id", (request, response) => {
   const cropId = request.params.id;
   Crop.updateOne({ _id: cropId }, { $set: { ...request.body } }).then(
     (result) => {
-      if (result.modiedCount === 1) {
+      if (result.modifiedCount === 1) {
         response.send({ status: "Crop has been updated" });
       }
     }
