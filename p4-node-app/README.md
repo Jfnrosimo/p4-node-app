@@ -29,6 +29,8 @@ This is a backend for vepply, a vegetable production monitoring app. Users can m
 - cors (cross-origin resource sharing)
 - helmet
 
+---
+
 ### Entity Relationship Diagram (ERD)
 
 ![](./assets/images/vepply-ERD.PNG)
@@ -42,10 +44,14 @@ This is a backend for vepply, a vegetable production monitoring app. Users can m
 | /api/v1/users/:userId               | PUT       | Update | Update user details                                |
 | /api/v1/crops/:userId               | POST      | Create | Create a crop from a specific user                 |
 | /api/v1/users/:userId/crops         | GET       | Read   | Get all crops from a specific user                 |
-| /api/v1/users/:userId/crops/:cropId | PUT       | Update | Update the user's added crop                       |
+| /api/v1/users/:userId/crops/:cropId | PUT       | Update | Update the user's list of added crop               |
 | /api/v1/crops/:cropId               | DELETE    | Delete | Delete crop                                        |
+| /api/v1/crops/:cropId               | PUT       | Update | Update crop                                        |
+
+---
 
 #### Powered by
 
-[app.diagrams.net](https://app.diagrams.net/)
-[Tables generator](https://www.tablesgenerator.com/markdown_tables)
+- [app.diagrams.net](https://app.diagrams.net/)
+- [Tables generator](https://www.tablesgenerator.com/markdown_tables)
+- [README template](https://github.com/orjames/mernProject#about-the-app)
