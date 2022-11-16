@@ -14,8 +14,8 @@ router.get("/:id", (request, response) => {
 });
 
 //Get all crops of specific user
-router.get("/:id/crops", (request, response) => {
-  User.find({ _id: request.params.id })
+router.get("/:userId/crops", (request, response) => {
+  User.find({ _id: request.params.userId })
     .populate("crops")
     .then((result) => {
       if (typeof result === "object") {
@@ -25,8 +25,8 @@ router.get("/:id/crops", (request, response) => {
 });
 
 //Update a user
-router.put("/:id", (request, response) => {
-  const userId = request.params.id;
+router.put("/:userId", (request, response) => {
+  const userId = request.params.userId;
   User.updateOne({ _id: userId }, { $set: { ...request.body } }).then(
     (result) => {
       if (result.modifiedCount === 1) {

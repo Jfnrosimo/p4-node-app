@@ -34,13 +34,12 @@ This is a backend for vepply, a vegetable production monitoring app. Users can m
 
 ### Database and API design
 
-| Action | Route                         |     |
-| ------ | ----------------------------- | --- |
-| Create | /login                        |     |
-| POST   | /register                     |     |
-| POST   | /me/from/token                |     |
-| GET    | /cloudinary-data/:pid         |     |
-| GET    | /profile/:userId/uploads      |     |
-| GET    | /profile/:userId/uploads/:uid |     |
-| POST   | /profile/:userId/uploads      |     |
-| DELETE | /profile/upload/delete        |     |
+| URL                                 | HTTP verb | CRUD   | Description                                        |
+| ----------------------------------- | --------- | ------ | -------------------------------------------------- |
+| /login                              | POST      | Create | Log in and find user if it has a match in database |
+| /register                           | POST      | Create | Create a user                                      |
+| /api/v1/users/:userId               | PUT       | Update | Update user details                                |
+| /api/v1/crops/:userId               | POST      | Create | Create a crop from a specific user                 |
+| /api/v1/users/:userId/crops         | GET       | Read   | Get all crops from a specific user                 |
+| /api/v1/users/:userId/crops/:cropId | PUT       | Update | Update the user's added crop                       |
+| /api/v1/crop/:cropId                | DELETE    | Delete | Delete crop                                        |
