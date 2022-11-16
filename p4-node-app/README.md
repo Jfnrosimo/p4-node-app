@@ -21,6 +21,7 @@ This is a backend for vepply, a vegetable production monitoring app. Users can m
 - MongoDB
 - NodeJS
 - ExpressJS
+- thunder client
 - mongoose
 - morgan
 - body-parser
@@ -42,4 +43,9 @@ This is a backend for vepply, a vegetable production monitoring app. Users can m
 | /api/v1/crops/:userId               | POST      | Create | Create a crop from a specific user                 |
 | /api/v1/users/:userId/crops         | GET       | Read   | Get all crops from a specific user                 |
 | /api/v1/users/:userId/crops/:cropId | PUT       | Update | Update the user's added crop                       |
-| /api/v1/crop/:cropId                | DELETE    | Delete | Delete crop                                        |
+| /api/v1/crops/:cropId               | DELETE    | Delete | Delete crop                                        |
+
+#### Powered by
+
+[app.diagrams.net](https://app.diagrams.net/)
+[Tables generator](https://www.tablesgenerator.com/markdown_tables)
