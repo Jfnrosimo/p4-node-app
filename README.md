@@ -6,6 +6,10 @@
 - npm i
 - test using postman, thunderclient or any of your preference
 
+## Live
+
+https://p4-node-app.vercel.app/
+
 ## Developer
 
 Jefferson D. Rosimo
