@@ -2,9 +2,9 @@
 
 ## How to
 
-cd p4-node-app
-npm i
-test using postman, thunderclient or any of your preference
+- cd p4-node-app
+- npm i
+- test using postman, thunderclient or any of your preference
 
 ## Developer
 
