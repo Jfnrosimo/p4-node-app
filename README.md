@@ -39,7 +39,7 @@ This is a backend for vepply, a vegetable production monitoring app. Users can m
 
 ### Entity Relationship Diagram (ERD)
 
-![](./assets/images/vepply-ERD.PNG)
+![](./p4-node-app/assets/images/vepply-ERD.PNG)
 
 ### Database and API design
 
